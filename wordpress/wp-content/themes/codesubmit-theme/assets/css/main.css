@@ -1,0 +1,80 @@
+/** 
+
+    This is a main scss file. 
+    It is used to generate a css file on the css folder.
+    I like to use the scss because is can possible use variables and my classes looks the better.    
+
+**/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cera Pro Medium";
+}
+
+::selection {
+  background-color: #ff5c5c;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+button,
+input {
+  border: 0;
+  font-family: "Cera Pro Medium";
+}
+button:focus,
+input:focus {
+  border: 0;
+}
+
+body {
+  font-family: "Cera Pro Medium";
+  background-color: #eef3f6;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #eef3f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff5c5c;
+  border-radius: 6px;
+}
+
+/*# sourceMappingURL=main.css.map */
