@@ -13,6 +13,6 @@
     <?php wp_head(); ?>
   </head>
   <body>
-    <header>
+    <header class="header">
       <?php get_template_part('template-parts/header/navbar'); ?>
     </header>

@@ -14,17 +14,32 @@ function  load_styles_and_scripts() {
 add_action('wp_enqueue_scripts', 'load_styles_and_scripts');
 
 
-/********* ADD THEME SUPPORT **************/
+/********* ADD MENU THEME **************/
 
 if ( ! function_exists( 'codesubmit_menus' ) ) {
     
     function codesubmit_menus() {
-
-        add_theme_support('menu');
-
         register_nav_menu('main-menu',__( 'Main Menu'));
     }
 
     add_action( 'init','codesubmit_menus' );
 }
+
+
+/********* ADD THEME SUPPORT **************/
+
+add_theme_support(
+    'custom-logo',
+    [
+        'height'      => 35,
+        'width'       => 35,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ]
+);
+
+
+
+
+
 
