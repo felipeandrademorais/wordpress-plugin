@@ -1,7 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+  /**
+   * This is a Head Template
+   */
+?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
   <head>
-    <title><?php echo get_bloginfo('name') . ' - ' . get_bloginfo('description') ?></title>
-    <?php wp_head(); ?> 
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php wp_head(); ?>
   </head>
   <body>
+    <header>
+      <?php get_template_part('template-parts/header/navbar'); ?>
+    </header>
