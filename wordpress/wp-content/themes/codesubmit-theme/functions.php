@@ -16,17 +16,15 @@ add_action('wp_enqueue_scripts', 'load_styles_and_scripts');
 
 /********* ADD THEME SUPPORT **************/
 
-if ( ! function_exists( 'load_theme_support' ) ) {
+if ( ! function_exists( 'codesubmit_menus' ) ) {
     
-    function load_theme_support() {
-        add_theme_support( 'menus' );
+    function codesubmit_menus() {
 
-        register_nav_menus( 
-            array( 
-                'main_menu' => _('Main Menu', 'codesubmit'),
-            )
-        );
+        add_theme_support('menu');
+
+        register_nav_menu('main-menu',__( 'Main Menu'));
     }
-    add_action( 'after_setup_theme','load_theme_support' );
+
+    add_action( 'init','codesubmit_menus' );
 }
 

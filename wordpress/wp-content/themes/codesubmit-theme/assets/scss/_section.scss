@@ -1,0 +1,61 @@
+.section {
+    display: flex;
+    .text_container {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 8%;
+        background: transparent ;
+        .head-primary {
+            font-family: $font-secondary;
+            font-weight: 400;
+            color: $font-color-ligth;
+            letter-spacing: 0.2rem;
+            span {
+                padding: 3px 8px;
+                margin-right: 0.8rem;
+                color: #fff;
+                font-weight: 700;
+                border-radius: 15px 15px;
+                background-color: $font-color-main;
+            }
+        }
+        .head-secundary {
+            max-width: 280px;
+            color: $font-color-secondary;
+            font-family: sans-serif;
+        }
+        h1 {
+            max-width: 650px;
+            font-family: $font-secondary;
+            font-size: 4rem;
+            color: $font-color-main;
+            font-weight: 700;
+        }
+        .buttons_container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 50px 0;
+            
+            .action {
+                padding: 15px 20px;
+                border-radius: 8px;
+                background-color: $color-action;
+                color: $bg-main;
+                font-weight: 700;
+                text-decoration: none;
+            }
+        }
+    }
+    .illustration {
+        width: 40%;
+        height: auto;
+        background: 
+            url('../images/illustration-devices.svg') no-repeat 0%,
+            url('../images/retangle.svg') no-repeat;
+    }
+}

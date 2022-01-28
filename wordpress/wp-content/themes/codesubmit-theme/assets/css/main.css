@@ -5,76 +5,81 @@
     use variables and my classes looks the better.    
 
 **/
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;700&family=Barlow:wght@100;300;400;500;700&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Cera Pro Medium";
-}
-
-::selection {
-  background-color: #ff5c5c;
-}
-
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
 }
 
 a {
   text-decoration: none;
-  cursor: pointer;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-button,
-input {
-  border: 0;
-  font-family: "Cera Pro Medium";
-}
-button:focus,
-input:focus {
-  border: 0;
 }
 
 body {
-  font-family: "Cera Pro Medium";
-  background-color: #eef3f6;
+  background-color: #fff;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
+.section {
+  display: flex;
 }
-
-::-webkit-scrollbar {
-  width: 6px;
+.section .text_container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 8%;
+  background: transparent;
 }
-
-::-webkit-scrollbar-track {
-  background-color: #eef3f6;
+.section .text_container .head-primary {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  color: #a0a1ac;
+  letter-spacing: 0.2rem;
 }
-
-::-webkit-scrollbar-thumb {
+.section .text_container .head-primary span {
+  padding: 3px 8px;
+  margin-right: 0.8rem;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 15px 15px;
+  background-color: #242942;
+}
+.section .text_container .head-secundary {
+  max-width: 280px;
+  color: #5b5f71;
+  font-family: sans-serif;
+}
+.section .text_container h1 {
+  max-width: 650px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 4rem;
+  color: #242942;
+  font-weight: 700;
+}
+.section .text_container .buttons_container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 50px 0;
+}
+.section .text_container .buttons_container .action {
+  padding: 15px 20px;
+  border-radius: 8px;
   background-color: #ff5c5c;
-  border-radius: 6px;
+  color: #eef3f6;
+  font-weight: 700;
+  text-decoration: none;
+}
+.section .illustration {
+  width: 40%;
+  height: auto;
+  background: url("../images/illustration-devices.svg") no-repeat 0%, url("../images/retangle.svg") no-repeat;
 }
 
 /*# sourceMappingURL=main.css.map */

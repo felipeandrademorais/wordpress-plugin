@@ -16,7 +16,6 @@
             wp_nav_menu(
                 array(
                     'theme_location'    => 'main_menu',
-                    'menu_class'        => 'menus',
                 )
             );
         ?>  
