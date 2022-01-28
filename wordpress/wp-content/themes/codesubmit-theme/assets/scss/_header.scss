@@ -1,0 +1,41 @@
+.nav_menu {
+    max-width: 1440px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    .logo {
+        max-width: 32px;
+        max-height: 32px;
+    }
+    .menu {
+        .menu_container {
+            display: flex;
+            gap: 50px;
+            text-decoration: none;
+            .menu-item {
+                text-decoration: none;
+                a {
+                    color: $font-color-main;
+                    font-weight: 700;
+                    font-size: 0.8rem;
+                }
+            }
+            .menu-item:last-child {
+                position: relative;
+                a {
+                    color: $font-color-ligth;
+                    margin-left: 30px;
+                }
+                a::before {
+                    content: url('https://api.iconify.design/akar-icons/circle-fill.svg?color=%23a0a1ac&width=8');
+                    position: absolute;
+                    left: -15px;
+                    top: 3px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav_menu">
     <div class="logo">
         <?php
             //Get logo from de Custumizer of Wordpress. 
@@ -15,7 +15,9 @@
             */            
             wp_nav_menu(
                 array(
-                    'theme_location'    => 'main_menu',
+                    'theme_location'  => 'main-menu',
+                    'container_class' => 'menu_div',
+                    'menu_class'      => 'menu_container',
                 )
             );
         ?>  
