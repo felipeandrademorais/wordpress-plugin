@@ -90,6 +90,7 @@ class Codesubmit_Schedule_Demo {
 	 * - Codesubmit_Schedule_Demo_i18n. Defines internationalization functionality.
 	 * - Codesubmit_Schedule_Demo_Admin. Defines all hooks for the admin area.
 	 * - Codesubmit_Schedule_Demo_Public. Defines all hooks for the public side of the site.
+	 * - Codesubmit_Schedule_Demos_Shortcode. Defines all Shortcodes of the plugin.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -121,6 +122,12 @@ class Codesubmit_Schedule_Demo {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-codesubmit-schedule-demo-public.php';
+
+		/**
+		 * The class responsible for generate the shortcodes of the plugin
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ )) . 'includes/class-codesubmit-schedule-demo-shortcode.php';
+		$Codesubmit_Schedule_Shortcode = new Codesubmit_Schedule_Demo_Shortcode();
 
 		$this->loader = new Codesubmit_Schedule_Demo_Loader();
 

@@ -1,5 +1,6 @@
 (function( $ ) {
 	'use strict';
+	$( window ).load(function() {
 
 	/**
 	 * All of the code for your public-facing JavaScript source
@@ -29,4 +30,17 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+		//Action of shortcode call to action button
+		$('#shortcode-action-button').on('click', () => {
+			$('.modal').toggle('active');
+		});
+
+		//Action of the close button modal.
+		$('.close-modal').on('click', () => {
+			$('.modal').toggle('active');
+		});
+
+	});
 })( jQuery );
+
+

@@ -13,4 +13,12 @@
  */
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<button id="shortcode-action-button" class="action">SCHEDULE A DEMO</button>
+
+<div class="modal">
+    <div class="content">
+        <div class="close-modal">
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/icon-close.svg' ?>" alt="">
+        </div>
+    </div>
+</div>
