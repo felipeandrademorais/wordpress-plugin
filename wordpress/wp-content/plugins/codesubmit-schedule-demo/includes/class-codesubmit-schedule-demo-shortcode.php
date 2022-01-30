@@ -22,7 +22,7 @@
 if(! class_exists('Codesubmit_Schedule_Demo_Shortcode')) {
     class Codesubmit_Schedule_Demo_Shortcode {
         public function __construct(){
-            add_shortcode('Codesubmit_Schedule', array($this, 'add_shortcode'));
+            add_shortcode('codesubmit_schedule', array($this, 'add_shortcode'));
         }
 
        

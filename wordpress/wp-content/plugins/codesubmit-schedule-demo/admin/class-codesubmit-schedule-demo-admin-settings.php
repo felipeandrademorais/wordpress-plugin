@@ -10,14 +10,14 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
     class Codesubmit_Schedule_Demo_Admin_Settings{
         
         public static $options;
-        public $days_of_week = array(
+        public static $days_of_week = array(
+            'sunday',
             'monday',
             'tuesday',
             'wednesday',
             'thursday',
             'friday', 
-            'saturday',
-            'sunday'
+            'saturday'
         );
 
         public function __construct() {
@@ -65,6 +65,14 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
                 'codesubmit_schedule_page1',    
             );
 
+            //fourth Section
+            add_settings_section(
+                'codesubmit_schedule_fourth_section',
+                'Your Phone Number',
+                null,
+                'codesubmit_schedule_page1',    
+            );
+
 
             /**
              * Create Fields
@@ -84,7 +92,7 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
                 'codesubmit_schedule_page1',
                 'codesubmit_schedule_second_section',
                 array(
-                    'items' =>  $this->days_of_week,
+                    'items' =>  self::$days_of_week,
                     'label_for' => 'codesubmit_schedule_availabilty_day_init',
                 ),
             );
@@ -96,7 +104,7 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
                 'codesubmit_schedule_page1',
                 'codesubmit_schedule_second_section',
                 array(
-                    'items' =>  $this->days_of_week,
+                    'items' =>  self::$days_of_week,
                     'label_for' => 'codesubmit_schedule_availabilty_day_finish',
                 ),
             );
@@ -120,6 +128,17 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
                 'codesubmit_schedule_third_section',
                 array(
                     'label_for' => 'codesubmit_schedule_availabilty_hour_finish'
+                ),
+            );
+
+            add_settings_field(
+                'codesubmit_schedule_phone_number',
+                'Phone Number',
+                array($this, 'codesubmit_schedule_phone_number_callback'),
+                'codesubmit_schedule_page1',
+                'codesubmit_schedule_fourth_section',
+                array(
+                    'label_for' => 'codesubmit_schedule_phone_number'
                 ),
             );
         }
@@ -203,6 +222,21 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
             <?php
         }
 
+        /**
+         * Field Phone Number.
+         */
+        public function codesubmit_schedule_phone_number_callback() {
+            ?>
+                <input
+                    placeholder="Ex: +5549984064669"
+                    type="text"
+                    name="codesubmit_schedule_options[codesubmit_schedule_phone_number]"
+                    id="codesubmit_schedule_phone_number"
+                    value="<?php echo isset(self::$options['codesubmit_schedule_phone_number']) ? esc_attr(self::$options['codesubmit_schedule_phone_number']) : ''; ?>"
+                >
+            <?php
+        }
+
 
         /**
          * This function validate inputs of the form
@@ -218,7 +252,7 @@ if( !class_exists('Codesubmit_Schedule_Demo_Admin_Settings')) {
                     add_settings_error(
                         'codesubmit_schedule_options', 
                         'codesubmit_schedule_message', 
-                        'The field "availabilty hours" can not be empty', 
+                        'The field "availabilty hours" and "Phone Number" can not be empty', 
                         'error'
                     );
                 }

@@ -139,7 +139,6 @@ class Codesubmit_Schedule_Demo_Admin {
 		if(!current_user_can('manage_options')) {
 			return;
 		}
-
 		//Add error and success messages
 		if(isset($_GET['settings-updated'])){
 			add_settings_error('codesubmit_schedule_options', 'codesubmit_schedule_message', 'Availabilty Saved', 'success');

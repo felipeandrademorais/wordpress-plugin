@@ -4,7 +4,7 @@
         <h1>POWERFUL INSIGHTS INTO YOUR TEAM</h1>
         <p class="head-secundary">Project planning and time tracking for agile teams</p>
         <div class="buttons_container">
-            <?php echo do_shortcode('[Codesubmit_Schedule]'); ?>
+            <?php echo do_shortcode('[codesubmit_schedule]'); ?>
             <a href="" class="head-primary">TO SEE A PREVIEW</a>
         </div>
     </div>

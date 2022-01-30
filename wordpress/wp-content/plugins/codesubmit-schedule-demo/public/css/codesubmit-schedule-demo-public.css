@@ -35,9 +35,15 @@
  }
 
  .modal .content .close-modal {
-  float: right;
-  cursor: pointer;
-}
+    float: right;
+    cursor: pointer;
+  }
+
+  .modal .content h1 {
+    margin: auto;
+    text-align: center;
+  }
+
 
  @media (max-width: 600px) {
    .action {
