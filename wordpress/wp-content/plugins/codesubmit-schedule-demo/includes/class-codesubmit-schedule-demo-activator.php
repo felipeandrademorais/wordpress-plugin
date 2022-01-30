@@ -32,5 +32,4 @@ class Codesubmit_Schedule_Demo_Activator {
 	public static function activate() {
 
 	}
-
 }

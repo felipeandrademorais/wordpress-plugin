@@ -14,3 +14,14 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+
+<div>
+    <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+    <form action="options.php" method="post">
+        <?php
+            settings_fields('codesubmit_schedule_group');
+            do_settings_sections('codesubmit_schedule_page1');
+            submit_button('Save');
+        ?>
+    </form>
+</div>

@@ -51,7 +51,13 @@ class Codesubmit_Schedule_Demo_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		
+		//Hook to add function add_menu;
+		add_action('admin_menu', array($this, 'add_menu'));
 
+		//Call the class, that create fields in admin menu
+		require_once(plugin_dir_path( __FILE__ ) . '/class-codesubmit-schedule-demo-admin-settings.php');
+		$Codesubmit_Schedule_Settings = new Codesubmit_Schedule_Demo_Admin_Settings();
 	}
 
 	/**
@@ -100,4 +106,46 @@ class Codesubmit_Schedule_Demo_Admin {
 
 	}
 
+	/**
+	 * Register menu in the admin area for 
+	 * configuration the plugin.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_menu() {
+
+		/**
+		 * Here is register menu page
+		 * with callback function that display
+		 * in the admin page the html of partials/codesubmit-schedule...display.php
+		 */
+		add_menu_page(
+			'Codesubmit options',
+			'Codesubmit Schedule',
+			'manage_options',
+			'codesubmit_admin',
+			array( $this, 'codesubmit_settings_page'),
+			'dashicons-admin-generic',
+		);
+	}
+
+	/**
+     * Callback function is used in method add_menu. 
+	 * 
+     * @since    1.0.0
+	 */
+    function codesubmit_settings_page() {
+		//Verify acess permitions
+		if(!current_user_can('manage_options')) {
+			return;
+		}
+
+		//Add error and success messages
+		if(isset($_GET['settings-updated'])){
+			add_settings_error('codesubmit_schedule_options', 'codesubmit_schedule_message', 'Availabilty Saved', 'success');
+		}
+		settings_errors('codesubmit_schedule_options');
+
+       require( plugin_dir_path( __FILE__ ) . 'partials/codesubmit-schedule-demo-admin-display.php');
+    }
 }
