@@ -1,5 +1,7 @@
 .section {
+    max-width: 1440px;
     display: flex;
+    flex-wrap: wrap;
     .text_container {
         width: 60%;
         display: flex;
@@ -15,6 +17,7 @@
             color: $font-color-ligth;
             letter-spacing: 0.2rem;
             span {
+                font-family: $font-secondary;
                 padding: 3px 8px;
                 margin-right: 0.8rem;
                 color: #fff;
@@ -54,8 +57,48 @@
     .illustration {
         width: 40%;
         height: auto;
-        background: 
-            url('../images/illustration-devices.svg') no-repeat 0%,
-            url('../images/retangle.svg') no-repeat;
+        display: flex;
+        align-items: center;
+        // background: 
+        //     url('../images/illustration-devices.svg') no-repeat 0%,
+        //     url('../images/retangle.svg') no-repeat;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        flex-direction: column-reverse;
+        gap: 50px;
+        .text_container {
+           width: 100%;
+           .head-primary {
+               font-size: 0.9rem;
+               span {
+                font-size: 0.9rem;
+               }
+           }
+           h1 {
+               font-size: 2.3rem;
+           }
+           .head-secundary {
+               line-height: 25px;
+           }
+           .buttons_container {
+            margin: 15px 0;
+            a:last-child {
+                font-size: 0.7rem;
+            }
+            .action {
+                padding: 13px 25px;
+                font-size: 0.7rem;
+            }
+        }
+        }
+        .illustration {
+            width: 100%;
+            img {
+                width: 135%;
+            }
+        }
     }
 }

@@ -7,6 +7,12 @@
             }
         ?>
     </div>
+    <div class="mobile_menu">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/icon-hamburger.svg' ?>" alt="">
+    </div>
+    <div class="close">
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/icon-close.svg' ?>" alt="">
+    </div>
     <div class="menu">
         <?php 
             /**

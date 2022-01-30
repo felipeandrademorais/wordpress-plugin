@@ -9,6 +9,6 @@
         </div>
     </div>
     <div class="illustration">
-        &nbsp;
+        <img src="<?php echo get_template_directory_uri() . '/assets/images/illustration-devices.svg' ?>" alt="">
     </div>
 </section>
